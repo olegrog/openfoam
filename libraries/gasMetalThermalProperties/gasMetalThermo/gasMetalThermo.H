@@ -58,7 +58,7 @@ class gasMetalThermo
 :
     public IOdictionary
 {
-
+    //- Struct containing coeffs for k and Cp
     struct kCp
     {
         //- Thermal conductivity polynomial coeffs
@@ -70,8 +70,8 @@ class gasMetalThermo
         //- Constructor
         kCp(const dictionary& dict)
         :
-            k(dict.lookup(coeffsName("k"))),
-            Cp(dict.lookup(coeffsName("Cp")))
+            k(dict.get<scalar>(coeffsName("k"))),
+            Cp(dict.get<scalar>(coeffsName("Cp")))
         {}
     };
 
